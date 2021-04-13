@@ -49,9 +49,17 @@ function createLetter() {
   inputText.focus();
 }
 
+function generateNewClasses({ target }) {
+  if (target.tagName === 'SPAN') {
+    target.classList.remove(...target.classList);
+    assignRandomClasses(target);
+  }
+}
+
 function onLoad() {
   inputText.focus();
   buttonGenerate.addEventListener('click', createLetter);
+  container.addEventListener('click', generateNewClasses);
 }
 
 window.onload = onLoad;
