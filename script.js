@@ -4,15 +4,23 @@ const container = document.getElementById('carta-gerada');
 
 const newSpanElement = document.createElement('span');
 
+function isEmpty(string) {
+  return string.trim() === '';
+}
+
 function createLetter() {
   container.innerHTML = '';
-  const words = inputText.value.split(' ');
+  const text = inputText.value;
 
-  words.forEach((word) => {
-    const newSpan = newSpanElement.cloneNode();
-    newSpan.innerText = word;
-    container.appendChild(newSpan);
-  });
+  if (!isEmpty(text)) {
+    const words = text.split(' ');
+
+    words.forEach((word) => {
+      const newSpan = newSpanElement.cloneNode();
+      newSpan.innerText = word;
+      container.appendChild(newSpan);
+    });
+  } else container.innerText = 'Por favor, digite o conteúdo da carta.';
 
   inputText.focus();
 }
