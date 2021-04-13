@@ -3,7 +3,7 @@ body {
 }
 
 .newspapaer {
-  background-color: antiquewhite;
+  background-color:rgb(250, 235, 215);
   font-family: Times New Roman;
   font-weight: 700;
 }
@@ -11,15 +11,15 @@ body {
 .magazine1 {
   background-color: teal;
   color: white;
-  font-family: verdana;
+  font-family: Verdana;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .magazine2 {
-  background-image: 'images/pink-pattern.png';
+  background-image: url('images/pink-pattern.png');
   color: fuchsia;
-  font-family: verdana;
+  font-family: Verdana;
   font-weight: 900;
 }
 
@@ -33,13 +33,13 @@ body {
   padding: 10px;
 }
 
-.reallybig{
+.reallybig {
   font-size: 40px;
   padding: 15px;
 }
 
 .rotateleft {
-  transform: rotate(-5deg);
+  transform: matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0);
 }
 
 .rotaterigtht {
