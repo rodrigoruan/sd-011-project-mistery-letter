@@ -1,6 +1,63 @@
+:root {
+
+  --color-trybe-green: rgba(3, 107, 82, 1);
+
+  --color-trybe-light-green: rgba(3, 107, 82, 0.7);
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: var(--color-trybe-green);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+main {
+  background-color: white;
+  padding: 2em;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input , button {
+  border-radius: 2em;
+  padding: 0.5em;
+}
+
+button {
+  background-color: var(--color-trybe-light-green);
+  color: white;
+  font-weight: 700;
+  margin-left: 0.5em;
+  border: none;
+}
+
+#carta-contador {
+  padding: 1em;
+}
+
+.contador:after {
+  content: ' palavra(s)';
+}
+
+#carta-gerada {
+  padding: 2em;
+}
+
+#carta-gerada span + span {
+  margin-left: 0.25em;
 }
 
 .newspaper {

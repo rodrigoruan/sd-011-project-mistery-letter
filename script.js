@@ -39,6 +39,7 @@ function createSpan(text) {
 
 function updateCounter(length) {
   counter.innerText = length;
+  if (counter.classList.length === 0) counter.classList.add('contador');
 }
 
 function createLetter() {
@@ -50,7 +51,11 @@ function createLetter() {
     updateCounter(words.length);
 
     words.forEach((word) => container.appendChild(createSpan(word)));
-  } else container.innerText = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    counter.innerHTML = '';
+    counter.classList.remove('contador');
+    container.innerText = 'Por favor, digite o conteúdo da carta.';
+  }
 
   inputText.focus();
 }
