@@ -11,7 +11,7 @@ const container = document.getElementById('carta-gerada');
 const newSpanElement = document.createElement('span');
 
 function isEmpty(string) {
-  return string.trim() === '';
+  return string === '';
 }
 
 /*
@@ -44,7 +44,7 @@ function updateCounter(length) {
 
 function createLetter() {
   container.innerHTML = '';
-  const text = inputText.value;
+  const text = inputText.value.trim();
 
   if (!isEmpty(text)) {
     const words = text.split(' ');
