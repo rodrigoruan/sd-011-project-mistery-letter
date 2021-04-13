@@ -1,3 +1,8 @@
+const styleClasses = ['newspaper', 'magazine1', 'magazine2'];
+const sizeClasses = ['medium', 'big', 'reallybig'];
+const rotationClasses = ['rotateleft', 'rotateright'];
+const inclinationClasses = ['skewleft', 'skewright'];
+
 const inputText = document.getElementById('carta-texto');
 const buttonGenerate = document.getElementById('criar-carta');
 const container = document.getElementById('carta-gerada');
@@ -8,6 +13,29 @@ function isEmpty(string) {
   return string.trim() === '';
 }
 
+/*
+  Code from MDN (Getting a random integer between two values)
+  Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+*/
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function assignRandomClasses(element) {
+  element.classList.add(styleClasses[getRandomNumber(0, 2)]);
+  element.classList.add(sizeClasses[getRandomNumber(0, 2)]);
+  element.classList.add(rotationClasses[getRandomNumber(0, 1)]);
+  element.classList.add(inclinationClasses[getRandomNumber(0, 1)]);
+}
+
+function createSpan(text) {
+  const newSpan = newSpanElement.cloneNode();
+  newSpan.innerText = text;
+  assignRandomClasses(newSpan);
+
+  return newSpan;
+}
+
 function createLetter() {
   container.innerHTML = '';
   const text = inputText.value;
@@ -15,11 +43,7 @@ function createLetter() {
   if (!isEmpty(text)) {
     const words = text.split(' ');
 
-    words.forEach((word) => {
-      const newSpan = newSpanElement.cloneNode();
-      newSpan.innerText = word;
-      container.appendChild(newSpan);
-    });
+    words.forEach((word) => container.appendChild(createSpan(word)));
   } else container.innerText = 'Por favor, digite o conteúdo da carta.';
 
   inputText.focus();
