@@ -41,3 +41,7 @@ body {
 .rotateleft {
   transform: rotate(-5deg);
 }
+
+.rotaterigtht {
+  transform: rotate(5deg);
+}
