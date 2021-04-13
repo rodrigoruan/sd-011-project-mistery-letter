@@ -34,3 +34,9 @@ genCard.addEventListener('click', () => {
     countWords.innerText = `Quantidade de palavras: ${arr.length}`;
   }
 });
+
+cardContainer.addEventListener('click', (event) => {
+  const cardClicked = event.target;
+  cardClicked.className = `${randomStyle()} ${randomSize()} ${randomRotation()} ${randomInclination()}`;
+  cardContainer.className = '';
+});
