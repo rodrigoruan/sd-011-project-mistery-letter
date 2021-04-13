@@ -1,8 +1,10 @@
 // Retrieve elements
 const generateButton = document.getElementById('criar-carta');
 const paragraph = document.getElementById('carta-gerada');
-const arrayOfClasses = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
-
+const arrayOfStyles = ['newspaper', 'magazine1', 'magazine2'];
+const arrayOfSize = ['medium', 'big', 'reallybig'];
+const arrayOfRotation = ['rotateleft', 'rotateright'];
+const arrayOfInclination = ['skewleft', 'skewright'];
 
 function checkForInput(value) {
   if (value === '' || value === ' ') {
@@ -11,14 +13,18 @@ function checkForInput(value) {
     paragraph.appendChild(createErrorElement);
   } else {
     return true;
-  }  
+  }
 }
 
-function generateRandomClass (array) {
-  const arrayInt = array;
-  const randomNumber = Math.floor(Math.random() * arrayInt.length);
-  const randomClass = arrayInt[randomNumber];
-  return randomClass;
+function generateRandomClass() {
+  const style = arrayOfStyles;
+  const size = arrayOfSize;
+  const rot = arrayOfRotation;
+  const inc = arrayOfInclination;
+  const styleSizeNum = Math.floor(Math.random() * 3);
+  const rotIncNum = Math.floor(Math.random() * 2);
+  const classRandom = [style[styleSizeNum], size[styleSizeNum], rot[rotIncNum], inc[rotIncNum]];
+  return classRandom;
 }
 
 function removeAllContent() {
@@ -28,9 +34,12 @@ function removeAllContent() {
 }
 
 function changeWordStyle(event) {
-  const newClassName = generateRandomClass(arrayOfClasses);
-  event.target.className = '';
-  event.target.classList.add(newClassName);
+  const value = event;
+  const newClassName = generateRandomClass();
+  value.target.className = '';
+  for (let index = 0; index < 3; index += 1) {
+    value.target.classList.add(newClassName[index]);
+  }
 }
 
 function updateSpan() {
@@ -44,13 +53,17 @@ function updateSpan() {
 function createWordCounter(value, inputValue) {
   const tagUpdate = value;
   const input = inputValue;
-  if (input === '' || input === ' ') {
-    return;
-  } else {
+  if (input !== '' || input !== ' ') {
     const counter = document.createElement('p');
     counter.id = 'carta-contador';
-    counter.innerText = `${tagUpdate.length}`
+    counter.innerText = `${tagUpdate.length}`;
     paragraph.appendChild(counter);
+  }
+}
+
+function addClass(randomGeneratedClass, value) {
+  for (let index = 0; index < 3; index += 1) {
+    value.classList.add(randomGeneratedClass[index]);
   }
 }
 
@@ -62,9 +75,9 @@ function createWord() {
     const textArray = textInput.split(' ');
     for (let index = 0; index < textArray.length; index += 1) {
       const createSpan = document.createElement('span');
-      const randomGeneratedClass = generateRandomClass(arrayOfClasses);
+      const randomGeneratedClass = generateRandomClass();
+      addClass(randomGeneratedClass, createSpan);
       createSpan.innerText = `${textArray[index]}`;
-      createSpan.classList.add(randomGeneratedClass);
       paragraph.appendChild(createSpan);
     }
     const update = updateSpan();
@@ -73,7 +86,7 @@ function createWord() {
 }
 
 function createEventListeners() {
-  generateButton.addEventListener('click', createWord);  
+  generateButton.addEventListener('click', createWord);
 }
 
 function init() {
