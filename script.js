@@ -25,18 +25,16 @@ genCard.addEventListener('click', () => {
         randomStyle(),
         randomSize(),
         randomRotation(),
-        randomInclination()
+        randomInclination(),
       );
       span.innerText = arr[i];
       cardContainer.appendChild(span);
     }
     countWords.innerText = '';
-    countWords.innerText = arr.length;
-  }
-});
+    countWords.innerText = arr.length; }});
 
 cardContainer.addEventListener('click', (event) => {
-  const cardClicked = event.target;
-  cardClicked.className = `${randomStyle()} ${randomSize()} ${randomRotation()} ${randomInclination()}`;
+  const cardC = event.target;
+  cardC.className = `${randomStyle()} ${randomSize()} ${randomRotation()} ${randomInclination()}`;
   cardContainer.className = '';
 });
