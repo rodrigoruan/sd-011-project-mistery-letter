@@ -17,7 +17,7 @@ genCard.addEventListener('click', () => {
   const valor = cardText.value;
   const arr = valor.split(' ').filter((c) => c !== '');
   if (valor === '' || valor[0] === ' ') {
-    cardContainer.innerText = 'Por favor, digite o conteúdo da carta';
+    cardContainer.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     for (let i = 0; i < arr.length; i += 1) {
       const span = document.createElement('span');
