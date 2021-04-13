@@ -31,7 +31,7 @@ genCard.addEventListener('click', () => {
       cardContainer.appendChild(span);
     }
     countWords.innerText = '';
-    countWords.innerText = `Quantidade de palavras: ${arr.length}`;
+    countWords.innerText = arr.length;
   }
 });
 
