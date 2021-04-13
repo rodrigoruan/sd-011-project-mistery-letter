@@ -21,7 +21,7 @@ genCard.addEventListener('click', () => {
   } else {
     for (let i = 0; i < arr.length; i += 1) {
       const span = document.createElement('span');
-      span.classList.add(randomStyle(), randomSize(), randomRotation(), randomInclination(),);
+      span.classList.add(randomStyle(), randomSize(), randomRotation(), randomInclination());
       span.innerText = arr[i];
       cardContainer.appendChild(span);
     }
