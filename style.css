@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap'); /* Fonte Poppins */ 
-
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +5,7 @@
 
 body {
   background-color: #eceff4;
-  font-family: Poppins, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 h2 {
@@ -60,7 +58,7 @@ h1 {
   transition: 1s;
 }
 
-#criar-carta:not( :hover ) {
+#criar-carta:not(:hover) {
   background-color: #eceff4;
   transition: 1s;
 }
