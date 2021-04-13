@@ -58,7 +58,7 @@ h1 {
   transition: 1s;
 }
 
-#criar-carta:not(:hover) {
+#criar-carta:not( :hover ) {
   background-color: #eceff4;
   transition: 1s;
 }
