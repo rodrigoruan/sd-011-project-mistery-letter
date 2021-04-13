@@ -5,6 +5,7 @@ const inclinationClasses = ['skewleft', 'skewright'];
 
 const inputText = document.getElementById('carta-texto');
 const buttonGenerate = document.getElementById('criar-carta');
+const counter = document.getElementById('carta-contador');
 const container = document.getElementById('carta-gerada');
 
 const newSpanElement = document.createElement('span');
@@ -36,12 +37,17 @@ function createSpan(text) {
   return newSpan;
 }
 
+function updateCounter(length) {
+  counter.innerText = length;
+}
+
 function createLetter() {
   container.innerHTML = '';
   const text = inputText.value;
 
   if (!isEmpty(text)) {
     const words = text.split(' ');
+    updateCounter(words.length);
 
     words.forEach((word) => container.appendChild(createSpan(word)));
   } else container.innerText = 'Por favor, digite o conteúdo da carta.';
