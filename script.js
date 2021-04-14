@@ -1,4 +1,3 @@
-
 const input = document.getElementById('carta-texto');
 let span = document.createElement('span');
 span = input.value;
