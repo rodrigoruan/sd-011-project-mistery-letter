@@ -1,5 +1,5 @@
 function clearLetter() {
-  const wordList = document.querySelectorAll('.word');
+  const wordList = document.querySelectorAll('span');
   const paragraph = document.getElementById('carta-gerada');
   for (let index = 0; index < wordList.length; index += 1) {
     paragraph.removeChild(wordList[index]);
@@ -43,6 +43,7 @@ function generateLetter() {
     element.addEventListener('click', changeClases);
     parent.appendChild(element);
   }
+  document.getElementById('carta-contador').innerText = letter.length;
 }
 
 function addEventGenerateLetter() {
