@@ -5,24 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <head></head>
   <main>
     <input type="text" id="carta-texto">
+    <button id="criar-carta">Criar Carta</button>
+    <p id="carta-gerada"></p>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
 
 <!-- 
-1 - Deve haver um input com o id="carta-texto" onde a pessoa usuária poderá digitar o conteúdo da carta
-O que será verificado:
-Será validado que existe um elemento input com id=carta-texto
-
-2 - Deve haver um parágrafo com o id="carta-gerada" onde a pessoa usuária verá o resultado de sua carta misteriosa
-O que será verificado:
-Será validado que existe um elemento p com o id="carta-gerada"
-
 3 - Deve haver um botão com id="criar-carta" e ao clicar nesse botão, a carta misteriosa deve ser gerada
 Pontos importantes:
 * Cada palavra deve aparecer dentro de uma tag `span`.
