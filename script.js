@@ -1,6 +1,7 @@
 const criarCarta = document.getElementById('criar-carta');
 const cartaTexto = document.getElementById('carta-texto');
 const cartaGerada = document.getElementById('carta-gerada');
+const cartaContador = document.getElementById('carta-contador');
 
 const stylesClasses = {
   magazine: ['magazine1', 'magazine2'],
@@ -36,6 +37,7 @@ criarCarta.addEventListener('click', () => {
       classesNamesSelecteds = generateRandomClasses();
       const classesFormated = `class="${classesNamesSelecteds.join(' ')}"`;
       cartaGerada.innerHTML += `<span ${classesFormated}>${texts[index]}<span>`;
+      cartaContador.innerText = texts.length;
     }
   } else {
     cartaGerada.innerText = 'por favor, digite o conteúdo da carta.';
