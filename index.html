@@ -10,6 +10,7 @@
 <body>
   <head></head>
   <main>
+    <p id="carta-contador">0</p>
     <input type="text" id="carta-texto">
     <button id="criar-carta">Criar Carta</button>
     <p id="carta-gerada"></p>
@@ -19,31 +20,6 @@
 </html>
 
 <!-- 
-16 - Adicione as classes de forma aleatória a fim de estilizar as palavras.
-Pontos importantes:
-* As classes devem ser adicionadas às tags `span` de forma **aleatória**.
-* Sempre adicione mais de uma classe em uma palavra.
-* Utilize as classes:
-  - `newspaper`, `magazine1`, `magazine2` (Grupo estilo)
-  - `medium`, `big`, `reallybig` (Grupo tamanho)
-  - `rotateleft`, `rotateright` (Grupo rotação)
-  - `skewleft`, `skewright` (Grupo inclinação)
-  Não é necessário utilizar classes de todos os grupos em uma palavra, mas **não** utilize mais de uma classe do mesmo grupo.
-  Ou seja, se você utilizar as classes `magazine1` e `skewright` em uma palavra, as classes `newspaper`, `magazine2`, `skeleft` não devem ser usadas para essa mesma palavra.
-O que será verificado:
-Será validado se ao criar uma carta ela recebe uma lista de classes aleatórias
-Será validado se ao criar uma segunda carta ela recebe uma lista de classes aleatórias
-Será validado se as classes das duas cartas não são exatamente iguais
-Requisitos Bônus:
-
-17 - Com uma carta misteriosa gerada, adicione a possibilidade de alterar o estilo de uma palavra específica ao clicar nela
-Pontos importantes:
-* Ao clicar em uma palavra, um novo estilo **aleatório** deve ser aplicado.
-* O número de mudanças deve ser ilimitado;
-O que será verificado:
-Será validado se ao clicar em uma carta uma nova lista aleatória de classes é gerada
-Será validado se ao clicar novamente na mesma carta uma nova lista aleatória de classes é gerada e se a nova lista é diferente da lista anterior
-
 18 - Deve haver um parágrafo com o id="carta-contador" onde existirá um contador de palavras
 Pontos importantes:
 * Esse contador deve informar a quantidade de palavras presentes na carta misteriosa gerada.
