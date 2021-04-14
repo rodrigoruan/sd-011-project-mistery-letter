@@ -7,18 +7,23 @@ function clearLetter() {
 }
 
 function applyClases(element) {
-  const style = ['newspaper', 'magazine1', 'magazine2', 'word'];
-  const size = ['medium', 'big', 'reallybig', 'word'];
-  const rotation = ['rotateleft', 'rotateright', 'word'];
-  const inclination = ['skewleft', 'skewright', 'word'];
-  let aux = Math.floor(Math.random() * 4);
+  const style = ['newspaper', 'magazine1', 'magazine2'];
+  const size = ['medium', 'big', 'reallybig'];
+  const rotation = ['rotateleft', 'rotateright'];
+  const inclination = ['skewleft', 'skewright'];
+  let aux = Math.floor(Math.random() * style.length);
   element.classList.add(style[aux]);
-  aux = Math.floor(Math.random() * 4);
+  aux = Math.floor(Math.random() * size.length);
   element.classList.add(size[aux]);
-  aux = Math.floor(Math.random() * 3);
+  aux = Math.floor(Math.random() * rotation.length);
   element.classList.add(rotation[aux]);
-  aux = Math.floor(Math.random() * 3);
+  aux = Math.floor(Math.random() * inclination.length);
   element.classList.add(inclination[aux]);
+}
+
+function changeClases(event) {
+  const word = event.target;
+  word
 }
 
 function generateLetter() {
@@ -33,8 +38,8 @@ function generateLetter() {
   for (let index = 0; index < letter.length; index += 1) {
     const element = document.createElement('span');
     element.innerText = letter[index];
-    element.classList.add('word');
     applyClases(element);
+    element.addEventListener('click', changeClases);
     parent.appendChild(element);
   }
 }
