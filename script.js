@@ -6,6 +6,12 @@ function clearLetter() {
   }
 }
 
+function changeClases(event) {
+  const word = event.target;
+  word.className = '';
+  applyClases(word);
+}
+
 function applyClases(element) {
   const style = ['newspaper', 'magazine1', 'magazine2'];
   const size = ['medium', 'big', 'reallybig'];
@@ -19,11 +25,6 @@ function applyClases(element) {
   element.classList.add(rotation[aux]);
   aux = Math.floor(Math.random() * inclination.length);
   element.classList.add(inclination[aux]);
-}
-
-function changeClases(event) {
-  const word = event.target;
-  word
 }
 
 function generateLetter() {
