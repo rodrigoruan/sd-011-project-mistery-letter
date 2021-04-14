@@ -2,13 +2,15 @@
 let inputLetter = document.getElementById('carta-texto');
 // get paragraph
 let generatedLetter = document.getElementById('carta-gerada');
+// get Counter Div
+let letterCounter = document.getElementById('carta-contador');
 // Array of classes
 let styleClassArray = ['magazine1','magazine2'];
 let sizeClassArray = ['medium', 'big', 'reallybig'];
 let rotationClassArray = ['rotateleft', 'rotateright'];
 let skewClassArray = ['skewleft', 'skewright'];
 
-
+//// Randomize Classes
 function randomizeClasses (element) {
   let randomStyle = styleClassArray[Math.floor(Math.random() * styleClassArray.length)]
   let randomSize = sizeClassArray[Math.floor(Math.random() * sizeClassArray.length)]
@@ -33,7 +35,11 @@ function createLetter() {
     letterValueSpan.innerHTML = brokenString[i];
     generatedLetter.appendChild(letterValueSpan);
   }
+  let wordCount = document.getElementsByTagName('span');
+  letterCounter.innerText = wordCount.length;
 }
+
+//// Word Counter
 
 // function randomizeClasses () {
 //   let randomStyle = styleClassArray[Math.floor(Math.random() * styleClassArray.length)]
