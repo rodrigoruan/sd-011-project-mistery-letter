@@ -6,11 +6,24 @@ function clearLetter() {
   }
 }
 
+function applyClases(element) {
+  const style = ['newspaper', 'magazine1', 'magazine2', 'word'];
+  const size = ['medium', 'big', 'reallybig', 'word'];
+  const rotation = ['rotateleft', 'rotateright', 'word'];
+  const inclination = ['skewleft', 'skewright', 'word'];
+  let aux = Math.floor(Math.random() * 4);
+  element.classList.add(style[aux]);
+  aux = Math.floor(Math.random() * 4);
+  element.classList.add(size[aux]);
+  aux = Math.floor(Math.random() * 3);
+  element.classList.add(rotation[aux]);
+  aux = Math.floor(Math.random() * 3);
+  element.classList.add(inclination[aux]);
+}
+
 function generateLetter() {
   const input = document.getElementById('carta-texto');
-  console.log(input.value);
   const letter = input.value.split(' ');
-  console.log(letter);
   clearLetter();
   const parent = document.getElementById('carta-gerada');
   if (letter[0] === '') {
@@ -21,6 +34,7 @@ function generateLetter() {
     const element = document.createElement('span');
     element.innerText = letter[index];
     element.classList.add('word');
+    applyClases(element);
     parent.appendChild(element);
   }
 }

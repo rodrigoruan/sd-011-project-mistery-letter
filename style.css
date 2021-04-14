@@ -3,7 +3,7 @@ body {
 }
 
 .newspaper {
-  background-color:antiquewhite;
+  background-color: antiquewhite;
   font-family: Times New 'Times New Roman', Times, serif;
   font-weight: 700;
 }
@@ -42,7 +42,7 @@ body {
   transform: rotate(-5deg);
 }
 
-.rotaterigth {
+.rotateright {
   transform: rotate(5deg);
 }
 
