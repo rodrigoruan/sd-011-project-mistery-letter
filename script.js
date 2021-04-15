@@ -41,3 +41,20 @@ function createSpans() {
   });
 }
 createSpans();
+
+// Escolha da palavra
+function editWord() {
+  allSpans.addEventListener('click', (eventoDeOrigem) => {
+    const clickedWord = eventoDeOrigem.target;
+    clickedWord.className = ' ';
+    let classIndex = Math.floor(Math.random() * spanStyle.length);
+    clickedWord.classList.add(`${spanStyle[classIndex]}`);
+    classIndex = Math.floor(Math.random() * spanSize.length);
+    clickedWord.classList.add(`${spanSize[classIndex]}`);
+    classIndex = Math.floor(Math.random() * spanRotation.length);
+    clickedWord.classList.add(`${spanRotation[classIndex]}`);
+    classIndex = Math.floor(Math.random() * spanWay.length);
+    clickedWord.classList.add(`${spanWay[classIndex]}`);
+  });
+}
+editWord();
