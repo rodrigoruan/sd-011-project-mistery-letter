@@ -43,6 +43,7 @@ function editWord() {
 editWord();
 
 generateButton.addEventListener('click', () => {
+  allSpans.innerText = '';
   const string = originalText.value;
   const array = string.split(' ');
   if (originalText.value.trim() === '') {
