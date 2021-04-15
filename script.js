@@ -25,31 +25,7 @@ function sortClasses() {
   }
 }
 
-function generateLetter() {
-  const string = originalText.value;
-  if (originalText.value.trim() === '') {
-    allSpans.innerText = 'Por favor, digite o conteúdo da carta.';
-  } else {
-    const array = string.split(' ');
-    for (let index = 0; index < array.length; index += 1) {
-      const span = document.createElement('span');
-      span.innerText = array[index];
-      allSpans.appendChild(span);
-    }
-  }
-}
-
-function createSpans() {
-  generateButton.addEventListener('click', () => {
-      generateLetter(); 
-      sortClasses();
-      count = array.length;
-      counter.innerText = `${count}`;
-  });
-}
-createSpans();
-
-// Escolha da palavra
+// Função editar palavra
 function editWord() {
   allSpans.addEventListener('click', (eventoDeOrigem) => {
     const clickedWord = eventoDeOrigem.target;
@@ -65,3 +41,24 @@ function editWord() {
   });
 }
 editWord();
+
+
+generateButton.addEventListener('click', () => {
+  const string = originalText.value;
+  if (originalText.value.trim() === '') {
+    allSpans.innerText = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    const array = string.split(' ');
+    console.log(array);
+    for (let index = 0; index < array.length; index += 1) {
+      const span = document.createElement('span');
+      span.innerText = array[index];
+      allSpans.appendChild(span);
+    }
+    sortClasses();
+    count = array.length;
+    counter.innerText = `${count}`;
+  }
+});
+
+
