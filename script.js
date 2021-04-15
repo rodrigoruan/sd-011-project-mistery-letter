@@ -42,14 +42,12 @@ function editWord() {
 }
 editWord();
 
-
 generateButton.addEventListener('click', () => {
   const string = originalText.value;
+  const array = string.split(' ');
   if (originalText.value.trim() === '') {
     allSpans.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
-    const array = string.split(' ');
-    console.log(array);
     for (let index = 0; index < array.length; index += 1) {
       const span = document.createElement('span');
       span.innerText = array[index];
@@ -60,5 +58,3 @@ generateButton.addEventListener('click', () => {
     counter.innerText = `${count}`;
   }
 });
-
-
