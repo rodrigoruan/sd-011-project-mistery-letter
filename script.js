@@ -1,6 +1,8 @@
 const generateButton = document.querySelector('#criar-carta');
 const originalText = document.querySelector('#carta-texto');
 const allSpans = document.querySelector('#carta-gerada');
+const counter = document.querySelector('#carta-contador');
+let count = 0;
 
 // Criação de grupos de classes
 const spanStyle = ['newspaper', 'magazine1', 'magazine2'];
@@ -37,6 +39,8 @@ function createSpans() {
         allSpans.appendChild(span);
       }
       sortClasses();
+      count = array.length;
+      counter.innerText = `${count}`;
     }
   });
 }
