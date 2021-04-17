@@ -2,10 +2,12 @@ const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
 const sizeGroup = ['medium', 'big', 'reallybig'];
 const rotationGroup = ['rotateleft', 'rotateright'];
 const inclinationGroup = ['skewleft', 'skewright'];
+
 const button = document.getElementById('criar-carta');
 const input = document.getElementById('carta-texto');
 const result = document.getElementById('carta-gerada');
-const counterSpace = document.getElementById('carta-contador');
+const counter = document.getElementById('carta-contador');
+
 const span = document.getElementsByTagName('span');
 
 function random(array) {
@@ -38,15 +40,15 @@ function createLetter() {
     if (!input.value || !input.value.trim()) {
       result.innerText = 'Por favor, digite o conteúdo da carta.';
     } else {
-      const breakInput = input.value.match(/\b(\w+)\b/g);
+      const breakInput = input.value.split(' ');
       for (let i = 0; i < breakInput.length; i += 1) {
         const createSpan = document.createElement('span');
         createSpan.innerText = breakInput[i];
         result.appendChild(createSpan);
         randomClass();
         clickRandom();
-        counterSpace.innerText = span.length;
       }
+      counter.innerText = breakInput.length;
     }
   });
 }
