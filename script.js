@@ -23,21 +23,10 @@ function randomClass() {
   }
 }
 
-function checkRepeat() {
-  for (let i = 0; i < span.length; i += 1) {
-    for (let j = 1; j < span.length; j += 1) {
-      if (span[i].classList === span[j].classList) {
-        randomClass();
-      }
-    }
-  }
-}
-
 function clickRandom() {
   for (let i = 0; i < span.length; i += 1) {
     span[i].addEventListener('click', () => {
       randomClass();
-      checkRepeat();
     });
   }
 }
@@ -54,10 +43,9 @@ function createLetter() {
         const createSpan = document.createElement('span');
         createSpan.innerText = breakInput[i];
         result.appendChild(createSpan);
-        counterSpace.innerText = span.length;
         randomClass();
-        checkRepeat();
         clickRandom();
+        counterSpace.innerText = span.length;
       }
     }
   });
