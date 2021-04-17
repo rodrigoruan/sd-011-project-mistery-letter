@@ -5,12 +5,11 @@ function createLetter() {
 
   button.addEventListener('click', () => {
     result.innerText = '';
-    
+
     if (!input.value || !input.value.trim()) {
-      result.innerText = 'Por favor, digite o conteúdo da carta';
+      result.innerText = 'Por favor, digite o conteúdo da carta.';
     } else {
       const breakInput = input.value.match(/\b(\w+)\b/g);
-
       for (let i = 0; i < breakInput.length; i += 1) {
         const span = document.createElement('span');
         span.innerText = breakInput[i];
