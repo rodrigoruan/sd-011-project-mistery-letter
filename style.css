@@ -3,3 +3,11 @@
   font-family: Times New Roman, Times, serif;
   font-weight: bold;
 }
+
+.magazine1 {
+  background-color: rgb(187, 216, 216);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
