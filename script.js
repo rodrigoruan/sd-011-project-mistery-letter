@@ -44,8 +44,7 @@ function clickRandom() {
 
 function countWords() {
   const counterSpace = document.getElementById('carta-contador');
-  counter = span.length;
-  counterSpace.innerText = counter;
+  counterSpace.innerText = span.length;
 }
 
 function createLetter() {
