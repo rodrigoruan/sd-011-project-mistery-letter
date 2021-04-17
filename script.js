@@ -5,8 +5,8 @@ const inclinationGroup = ['skewleft', 'skewright'];
 const button = document.getElementById('criar-carta');
 const input = document.getElementById('carta-texto');
 const result = document.getElementById('carta-gerada');
+const counterSpace = document.getElementById('carta-contador');
 const span = document.getElementsByTagName('span');
-let counter = 0;
 
 function random(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
@@ -42,11 +42,6 @@ function clickRandom() {
   }
 }
 
-function countWords() {
-  const counterSpace = document.getElementById('carta-contador');
-  counterSpace.innerText = span.length;
-}
-
 function createLetter() {
   button.addEventListener('click', () => {
     result.innerText = '';
@@ -59,10 +54,10 @@ function createLetter() {
         const createSpan = document.createElement('span');
         createSpan.innerText = breakInput[i];
         result.appendChild(createSpan);
+        counterSpace.innerText = span.length;
         randomClass();
         checkRepeat();
         clickRandom();
-        countWords();
       }
     }
   });
