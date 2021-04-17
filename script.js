@@ -42,6 +42,12 @@ function clickRandom() {
   }
 }
 
+function countWords() {
+  const counterSpace = document.getElementById('carta-contador');
+  counter = span.length;
+  counterSpace.innerText = counter;
+}
+
 function createLetter() {
   button.addEventListener('click', () => {
     result.innerText = '';
@@ -61,12 +67,6 @@ function createLetter() {
       }
     }
   });
-}
-
-function countWords() {
-  const counterSpace = document.getElementById('carta-contador');
-  counter = span.length;
-  counterSpace.innerText = `${counter} palavras.`;
 }
 
 createLetter();
