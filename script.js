@@ -24,6 +24,8 @@ botao.addEventListener('click', () => {
       makeSpan.classList.add(classes[makeAleatoryNumber()]);
     }
   }
+  const contador = document.querySelector('#carta-contador');
+  contador.innerText = palavras.length;
 });
 
 tagP.addEventListener('click', (event) => {
