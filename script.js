@@ -30,5 +30,15 @@ function createLetter() {
   }
 }
 
+function changeClasses(event) {
+  const word = event.target;
+  if (word.tagName === 'SPAN') {
+    word.className = pickRandomClasses();
+  }
+}
+
 createLetterButton.addEventListener('click', createLetter);
-console.log(pickRandomClasses());
+inputElement.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') createLetterButton.click();
+});
+letterElement.addEventListener('click', changeClasses);
