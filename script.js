@@ -4,8 +4,12 @@ const createLetterButton = document.getElementById('criar-carta');
 
 function createLetter() {
   const inputText = inputElement.value;
-  const letter = inputText.split(' ').map((word) => (`<span>${word}</span>`)).join(' ');
-  letterElement.innerHTML = letter;
+  if (inputText.trim() === '') {
+    letterElement.innerHTML = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    const letter = inputText.split(' ').map((word) => (`<span>${word}</span>`)).join(' ');
+    letterElement.innerHTML = letter;
+  }
 }
 
 createLetterButton.addEventListener('click', createLetter);
