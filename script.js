@@ -2,14 +2,33 @@ const inputElement = document.getElementById('carta-texto');
 const letterElement = document.getElementById('carta-gerada');
 const createLetterButton = document.getElementById('criar-carta');
 
+const classes = {
+  style: ['newspaper', 'magazine1', 'magazine2'],
+  size: ['medium', 'big', 'reallybig'],
+  rotation: ['rotateleft', 'rotateright'],
+  skew: ['skewleft', 'skewright'],
+};
+
+function pickRandomClasses() {
+  const group1 = Object.keys(classes)[Math.floor(Math.random() * Object.keys(classes).length)];
+  const group2 = Object.keys(classes)[Math.floor(Math.random() * Object.keys(classes).length)];
+  const class1 = classes[group1][Math.floor(Math.random() * classes[group1].length)];
+  const class2 = classes[group2][Math.floor(Math.random() * classes[group2].length)];
+  return `${class1} ${class2}`;
+}
+
 function createLetter() {
   const inputText = inputElement.value;
   if (inputText.trim() === '') {
     letterElement.innerHTML = 'Por favor, digite o conteúdo da carta.';
   } else {
-    const letter = inputText.split(' ').map((word) => (`<span>${word}</span>`)).join(' ');
+    const letter = inputText.split(' ').map((word) => {
+      const randomClasses = pickRandomClasses();
+      return `<span class="${randomClasses}">${word}</span>`;
+    }).join(' ');
     letterElement.innerHTML = letter;
   }
 }
 
 createLetterButton.addEventListener('click', createLetter);
+console.log(pickRandomClasses());
