@@ -1,6 +1,7 @@
 const inputElement = document.getElementById('carta-texto');
 const letterElement = document.getElementById('carta-gerada');
 const createLetterButton = document.getElementById('criar-carta');
+const wordCountElement = document.getElementById('carta-contador');
 
 const classes = {
   style: ['newspaper', 'magazine1', 'magazine2'],
@@ -22,11 +23,12 @@ function createLetter() {
   if (inputText.trim() === '') {
     letterElement.innerHTML = 'Por favor, digite o conteúdo da carta.';
   } else {
-    const letter = inputText.split(' ').map((word) => {
+    const letter = inputText.trim().split(' ').map((word) => {
       const randomClasses = pickRandomClasses();
       return `<span class="${randomClasses}">${word}</span>`;
-    }).join(' ');
-    letterElement.innerHTML = letter;
+    });
+    wordCountElement.textContent = letter.length;
+    letterElement.innerHTML = letter.join(' ');
   }
 }
 
