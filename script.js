@@ -3,7 +3,6 @@ const botao = document.querySelector('#criar-carta');
 botao.addEventListener('click', () => {
   const frase = document.querySelector('#carta-texto').value;
   const palavras = frase.split(' ');
-  console.log(palavras);
   tagP.innerHTML = '';
   for (let index = 0; index < palavras.length; index += 1) {
     if (palavras[0] === '') {
