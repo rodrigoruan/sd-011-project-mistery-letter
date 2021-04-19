@@ -1,6 +1,7 @@
 const letterInput = document.getElementById('carta-texto');
 const generateLetterButton = document.getElementById('criar-carta');
 const outputLetter = document.getElementById('carta-gerada');
+const wordCountElement = document.getElementById('carta-contador');
 
 const cssClasses = {
   style: ['newspaper', 'magazine1', 'magazine2'],
@@ -8,6 +9,10 @@ const cssClasses = {
   rotate: ['rotateleft', 'rotateright'],
   skew: ['skewleft', 'skewright'],
 };
+
+function updateCount(count) {
+  wordCountElement.innerText = count;
+}
 
 /* 
   Explicação sobre esse algoritmo de sort: https://bost.ocks.org/mike/shuffle/
@@ -80,6 +85,7 @@ generateLetterButton.addEventListener('click', (e) => {
   }
   outputLetter.innerHTML = '';
   const words = currentInput.split(' ');
+  updateCount(words.length);
 
   for (let i = 0; i < words.length; i += 1) {
    const newScrap = document.createElement('span');
