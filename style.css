@@ -15,6 +15,18 @@ main {
   margin: 24px auto;
 }
 
+#carta-gerada {
+  margin-top: 48px;
+}
+
+#carta-gerada > span {
+  margin-right: 10px;
+}
+
+#carta-gerada > span:last-child {
+  margin-right: 0;
+}
+
 footer {
   text-align: center;
 }
