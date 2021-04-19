@@ -27,6 +27,12 @@ main {
   margin-right: 0;
 }
 
+.newspaper {
+  background-color: antiquewhite;
+  font-family: 'Times New Roman';
+  font-weight: 700;
+}
+
 footer {
   text-align: center;
 }

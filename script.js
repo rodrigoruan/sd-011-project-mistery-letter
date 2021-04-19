@@ -4,11 +4,12 @@ const outputLetter = document.getElementById('carta-gerada');
 
 generateLetterButton.addEventListener('click', (e) => {
   e.preventDefault();
-  if (!letterInput.value) {
+  const currentInput = letterInput.value;
+  if (!currentInput || !currentInput.replace(' ', '')) {
     return outputLetter.innerHTML = 'Por favor, digite o conteúdo da carta.';
   }
   outputLetter.innerHTML = '';
-  const words = letterInput.value.split(' ');
+  const words = currentInput.split(' ');
 
   for (let i = 0; i < words.length; i += 1) {
    const newScrap = document.createElement('span');
