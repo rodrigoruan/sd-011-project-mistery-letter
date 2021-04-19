@@ -19,22 +19,30 @@ function eraseLetter() {
   }
 }
 
+function checkInputTextLetter() {
+  const tempInput = inputTextLetter.value;
+
+  if (!tempInput.replace(/\s/g, '').length) {
+    return false;
+  }
+}
+
 function createLetter() {
   const arrayTextLetter = inputTextLetter.value.split(' ');
 
-  if (generatedLetter.children.length > 0) {
+  if (checkInputTextLetter() === false) {
+    alert('Por favor, digite o conteúdo da carta.');
+  } else {
     eraseLetter();
-  }
-
-  for (let index = 0; index < arrayTextLetter.length; index += 1) {
-    const spanWord = document.createElement('span');
-    spanWord.innerText = arrayTextLetter[index];
-    spanWord.classList.add('word');
-    spanWord.classList.add(groupSize[randomNumber(groupSize.length - 1)]);
-    spanWord.classList.add(groupStyle[randomNumber(groupStyle.length - 1)]);
-    spanWord.classList.add(groupRotation[randomNumber(groupRotation.length - 1)]);
-    spanWord.classList.add(groupSlope[randomNumber(groupSlope.length - 1)]);
-    generatedLetter.appendChild(spanWord);
+    for (let index = 0; index < arrayTextLetter.length; index += 1) {
+      const spanWord = document.createElement('span');
+      spanWord.innerText = arrayTextLetter[index];
+      spanWord.classList.add(groupSize[randomNumber(groupSize.length - 1)]);
+      spanWord.classList.add(groupStyle[randomNumber(groupStyle.length - 1)]);
+      spanWord.classList.add(groupRotation[randomNumber(groupRotation.length - 1)]);
+      spanWord.classList.add(groupSlope[randomNumber(groupSlope.length - 1)]);
+      generatedLetter.appendChild(spanWord);
+    }
   }
 }
 
