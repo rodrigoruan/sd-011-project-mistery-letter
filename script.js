@@ -14,11 +14,12 @@ function updateCount(count) {
   wordCountElement.innerText = count;
 }
 
-/* 
+/*
   Explicação sobre esse algoritmo de sort: https://bost.ocks.org/mike/shuffle/
 */
 
-function fisherYatesShuffle(array) {
+function fisherYatesShuffle(originalArray) {
+  const array = [...originalArray];
   let backPileFrontier = array.length;
   let swap;
   let randomIndex;
@@ -66,12 +67,10 @@ function getRandomClassArray() {
   const classArray = [];
 
   for (let i = 0; i < cssClassesProps.length; i += 1) {
-    if (!randomBooleanArray[i]) {
-      continue;
+    if (randomBooleanArray[i]) {
+      const category = cssClassesProps[i];
+      classArray.push(getRandomClass(category));
     }
-
-    const category = cssClassesProps[i];
-    classArray.push(getRandomClass(category));
   }
 
   return classArray;
@@ -81,20 +80,19 @@ generateLetterButton.addEventListener('click', (e) => {
   e.preventDefault();
   const currentInput = letterInput.value;
   if (!currentInput || !currentInput.replace(' ', '')) {
-    return outputLetter.innerHTML = 'Por favor, digite o conteúdo da carta.';
+    outputLetter.innerHTML = 'Por favor, digite o conteúdo da carta.';
+    return;
   }
   outputLetter.innerHTML = '';
   const words = currentInput.split(' ');
   updateCount(words.length);
-
   for (let i = 0; i < words.length; i += 1) {
-   const newScrap = document.createElement('span');
-   newScrap.innerText = words[i];
-   newScrap.className = getRandomClassArray().join(' ');
-   newScrap.addEventListener('click', () => {
-     newScrap.className = getRandomClassArray().join(' ');
-   })
-
-   outputLetter.appendChild(newScrap); 
+    const newScrap = document.createElement('span');
+    newScrap.innerText = words[i];
+    newScrap.className = getRandomClassArray().join(' ');
+    newScrap.addEventListener('click', () => {
+      newScrap.className = getRandomClassArray().join(' ');
+    });
+    outputLetter.appendChild(newScrap);
   }
 });
