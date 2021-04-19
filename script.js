@@ -32,17 +32,7 @@ function createLetter() {
 
   if (checkInputTextLetter() === false) {
     eraseLetter();
-    const alertMessage = 'Por favor, digite o conteúdo da carta.'
-    const arrayAlertMessage = alertMessage.split(' ');
-    for (let index = 0; index < arrayAlertMessage.length; index += 1) {
-      const spanWord = document.createElement('span');
-      spanWord.innerText = arrayAlertMessage[index];
-      spanWord.classList.add(groupSize[randomNumber(groupSize.length - 1)]);
-      spanWord.classList.add(groupStyle[randomNumber(groupStyle.length - 1)]);
-      spanWord.classList.add(groupRotation[randomNumber(groupRotation.length - 1)]);
-      spanWord.classList.add(groupSlope[randomNumber(groupSlope.length - 1)]);
-      generatedLetter.appendChild(spanWord);
-    }
+    generatedLetter.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     eraseLetter();
     for (let index = 0; index < arrayTextLetter.length; index += 1) {
