@@ -4,3 +4,17 @@
   box-sizing: border-box;
 }
 
+header {
+  text-align: center;
+  padding: 24px 0;
+}
+
+main {
+  min-height: 75vh;
+  width: max-content;
+  margin: 24px auto;
+}
+
+footer {
+  text-align: center;
+}
