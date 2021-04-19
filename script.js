@@ -4,13 +4,18 @@ const p = document.getElementById('carta-gerada');
 const button = document.getElementById('criar-carta');
 
 button.addEventListener('click', () => {
-  const word = input.value.split(' ');
-  for (let i = 0; i < word.length; i += 1) {
+  if (input.value.trim() === '') {
     const span = document.createElement('span');
-    span.append(word[i]);
+    span.append('Por favor, digite o conteúdo da carta.');
     p.appendChild(span);
+  } else {
+    const splitedStr = input.value.split(' ');
+    for (let i = 0; i < splitedStr.length; i += 1) {
+      const span = document.createElement('span');
+      span.append(splitedStr[i]);
+      p.appendChild(span);
+    }
   }
-  input.value = '';
 });
 
 input.addEventListener('change', () => {
