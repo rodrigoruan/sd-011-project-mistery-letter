@@ -21,6 +21,8 @@ main {
 
 #carta-gerada > span {
   margin-right: 10px;
+  user-select: none;
+  cursor: pointer;
 }
 
 #carta-gerada > span:last-child {

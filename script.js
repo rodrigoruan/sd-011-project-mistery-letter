@@ -85,6 +85,10 @@ generateLetterButton.addEventListener('click', (e) => {
    const newScrap = document.createElement('span');
    newScrap.innerText = words[i];
    newScrap.className = getRandomClassArray().join(' ');
+   newScrap.addEventListener('click', () => {
+     newScrap.className = getRandomClassArray().join(' ');
+   })
+
    outputLetter.appendChild(newScrap); 
   }
 });
