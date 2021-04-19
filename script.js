@@ -1,6 +1,7 @@
 const generatedLetter = document.getElementById('carta-gerada');
 const buttonCreateLetter = document.getElementById('criar-carta');
 const inputTextLetter = document.getElementById('carta-texto');
+const counter = document.getElementById('carta-contador');
 
 const groupStyle = ['newspaper', 'magazine1', 'magazine2'];
 const groupSize = ['medium', 'big', 'reallybig'];
@@ -29,7 +30,7 @@ function checkInputTextLetter() {
 
 function createLetter() {
   const arrayTextLetter = inputTextLetter.value.split(' ');
-
+  counter.innerText = arrayTextLetter.length;
   if (checkInputTextLetter() === false) {
     eraseLetter();
     generatedLetter.innerText = 'Por favor, digite o conteúdo da carta.';
