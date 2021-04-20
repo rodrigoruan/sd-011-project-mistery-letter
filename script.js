@@ -8,7 +8,8 @@ const arrayOfInclination = ['skewleft', 'skewright'];
 
 function checkForInput(value) {
   if (value === '' || value === ' ') {
-    const createErrorElement = document.createElement('span');
+    const createErrorElement = document.createElement('p');
+    createErrorElement.id = 'error';
     createErrorElement.innerText = 'Por favor, digite o conteúdo da carta.';
     paragraph.appendChild(createErrorElement);
   } else {
@@ -77,6 +78,7 @@ function createWord() {
       const createSpan = document.createElement('span');
       const randomGeneratedClass = generateRandomClass();
       addClass(randomGeneratedClass, createSpan);
+      createSpan.style.display = 'inline-block';
       createSpan.innerText = `${textArray[index]}`;
       paragraph.appendChild(createSpan);
     }
