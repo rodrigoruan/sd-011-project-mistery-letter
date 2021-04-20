@@ -1,12 +1,18 @@
+/* eslint-disable complexity */
 const buttonText = document.getElementById('criar-carta');
-const cartaGerada = document.querySelector('#carta-gerada p');
+const cartaGerada = document.querySelector('#carta-gerada');
 const textInput = document.getElementById('carta-texto');
+const cartaContador = document.getElementById('carta-contador');
 
-function addText() {
-  if (textInput.value === '') {
-    alert('Por favor, digite o conteúdo da carta.');
+function verifyEmpty() {
+  if (textInput.value === '' || textInput.value === ' ') {
+    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta.';
   }
+}
+
+function someItem() {
   const tank = textInput.value.split(' ');
+  cartaGerada.innerHTML = '';
   for (let i = 0; i < tank.length; i += 1) {
     const x = document.createElement('span');
     x.innerText = tank[i];
@@ -14,8 +20,15 @@ function addText() {
   }
 }
 
-textInput.value = 'A S D F G H J 1 3 O 4 F';
-buttonText.addEventListener('click', addText);
+buttonText.addEventListener('click', someItem);
+
+buttonText.addEventListener('click', () => {
+  for (let i = 0; i < cartaGerada.children.length; i += 1) {
+    cartaGerada.children[i].className = '';
+  }
+});
+
+buttonText.addEventListener('click', verifyEmpty);
 
 const styleClasses = ['newspaper', 'magazine1', 'magazine2'];
 const sizeClasses = ['medium', 'big', 'reallybig'];
@@ -37,3 +50,7 @@ function setClasses() {
 }
 
 buttonText.addEventListener('click', setClasses);
+
+buttonText.addEventListener('click', () => {
+  cartaContador.innerText = cartaGerada.childElementCount;
+});
