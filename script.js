@@ -8,11 +8,8 @@ createLetter.addEventListener('click', function(){
     for(let i=0; i<palavrasFrase.length;i++){
         let spanFrase = document.createElement('span');
         spanFrase.innerText = palavrasFrase[i];
-        if(i != palavrasFrase.length-1){
-            spanFrase.innerText += ' ';
-        }
         mostrarPalavras.appendChild(spanFrase);
     }
     console.log(mostrarPalavras);
-    //Essa será minha carta
+    //Esta será minha carta
 });
