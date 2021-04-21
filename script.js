@@ -9,10 +9,12 @@ createLetter.addEventListener('click', function(){
     let mostrarPalavras = document.getElementById('carta-gerada');
     mostrarPalavras.innerHTML = '';
     let frase = document.getElementById('carta-texto').value;
+
     if (frase=='' || !frase.trim()){
         mostrarPalavras.innerText = 'Por favor, digite o conteúdo da carta.';
     }else{
         let palavrasFrase = frase.split(' ');
+        document.getElementById('carta-contador').innerHTML=palavrasFrase.length;
         for(let i=0; i<palavrasFrase.length;i++){
             let randomEstilo = Math.floor(Math.random()*3);
             let randomTamanho = Math.floor(Math.random()*3);
