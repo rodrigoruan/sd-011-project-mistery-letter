@@ -4,9 +4,9 @@ function generateLetter() {
   textButton.addEventListener('click', () => {
     generatedLetter.innerHTML = '';
     const textInput = document.getElementById('carta-texto').value;
-    let splitText = textInput.split(' ');
+    const splitText = textInput.split(' ');
     for (let index = 0; index < splitText.length; index += 1) {
-      let letterContent = document.createElement('span');
+      const letterContent = document.createElement('span');
       letterContent.innerText = splitText[index];
       generatedLetter.appendChild(letterContent);
     }
