@@ -1,11 +1,15 @@
 const createLetter = document.getElementById('criar-carta');
 
+// Função para pegar o texto do input e dividir de acordo com as palavas da frase
+
 function getInputText() {
   let texto = document.getElementById('carta-texto').value;
   texto = texto.split(' ');
 
   return texto;
 }
+
+// Função para adicionar palavras da frase em tags span no elemento de id="carta-gerada"
 
 createLetter.addEventListener('click', () => {
   const text = getInputText();
