@@ -6,8 +6,16 @@ const getButtonCard = document.getElementById('criar-carta');
 
 // Gerar carta
 getButtonCard.addEventListener('click', () => {
-  const separaPalavras = inputText.value.split(' ');
-  showCard.innerHTML = separaPalavras;
+  if (inputText.value === '' || inputText.value === ' ') {
+    showCard.innerHTML = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    const separaPalavras = inputText.value.split(' ');
+    for(let index = 0; index < separaPalavras.legth; index += 1) {
+      const spanCard = document.createElement('span');
+      showCard.appendChild(spanCard);
+      spanCard.innerText = separaPalavras[index];
+    }
+  }
 });
 
 // Manter texto no input
@@ -16,13 +24,6 @@ function saveSotorage() {
   localStorage.setItem('carta', inputCarta);
   localStorage.getItem('carta');
 }
-
-function checkTextInput() {
-  if (inputText.value === null || inputText.value === ' ') {
-    showCard.innerHTML = 'Por favor, digite o conteúdo da carta';
-  }
-}
-checkTextInput();
 
 window.onload = function initial() {
   saveSotorage();
