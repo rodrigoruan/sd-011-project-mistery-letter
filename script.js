@@ -6,7 +6,8 @@ const getButtonCard = document.getElementById('criar-carta');
 
 // Gerar carta
 getButtonCard.addEventListener('click', () => {
-  showCard.innerHTML = inputText.value;
+  const separaPalavras = inputText.value.split(' ');
+  showCard.innerHTML = separaPalavras;
 });
 
 // Manter texto no input
