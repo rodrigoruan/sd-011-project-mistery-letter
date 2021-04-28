@@ -9,6 +9,10 @@ html , body {
   width: 100%;
 }
 
+body {
+  background-image: linear-gradient(to bottom, darkblue, blue, darkcyan);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -18,6 +22,9 @@ main {
 
 main h1 {
   text-align: center;
+  font-family: Freckle Face, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
 }
 
 main div {
@@ -48,6 +55,7 @@ main p {
 
 #frase-contador {
   display: flex;
+  color: white;
 }
 
 #frase-contador p {
