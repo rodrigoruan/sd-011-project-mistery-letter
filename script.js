@@ -21,6 +21,7 @@ function checkTextInput() {
     showCard.innerHTML = 'Por favor, digite o conteúdo da carta';
   }
 }
+checkTextInput();
 
 window.onload = function initial() {
   saveSotorage();
