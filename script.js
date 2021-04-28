@@ -12,18 +12,16 @@ getButtonCard.addEventListener('click', () => {
 // Manter texto no input
 function saveSotorage() {
   const inputCarta = document.getElementById('carta-texto').value;
-  localStorage.setItem("carta", inputCarta);
-  localStorage.getItem("carta");
-  }
-
+  localStorage.setItem('carta', inputCarta);
+  localStorage.getItem('carta');
+}
 
 function checkTextInput() {
-  if(inputText.value === null || inputText.value === ' ') {
+  if (inputText.value === null || inputText.value === ' ') {
     showCard.innerHTML = 'Por favor, digite o conteúdo da carta';
   }
 }
 
-
-window.onload = function() {
+window.onload = function initial() {
   saveSotorage();
-}
+};
