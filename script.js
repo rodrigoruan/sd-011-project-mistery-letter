@@ -40,10 +40,13 @@ botao.addEventListener('click', () => {
   for (let index = 0; index < span.length; index += 1) {
     span[index].classList.add(
       estilos.style[Math.floor(Math.random() * estilos.style.length)]);
+
     span[index].classList.add(
       estilos.size[Math.floor(Math.random() * estilos.size.length)]);
+
     span[index].classList.add(
       estilos.rotation[Math.floor(Math.random() * estilos.rotation.length)]);
+      
     span[index].classList.add(
       estilos.slope[Math.floor(Math.random() * estilos.slope.length)]
     );
@@ -55,5 +58,5 @@ botao.addEventListener('click', () => {
   if (palavras === '' || palavras === ' ') {
     return contador.innerHTML = 0;
   }
-  return (contador.innerHTML = palavras.length);
+  return contador.innerHTML = palavras.length;
 });
