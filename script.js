@@ -7,18 +7,15 @@ function DivideTexto() {
   return palavras;
 }
 
-
 botao.addEventListener('click', () => {
 // constante que traz a função para o eventlistener
   const palavras = DivideTexto();
   const paragrafo = document.getElementById('carta-gerada');
   // limpa o parágrafo para não acumular palavras
   paragrafo.innerHTML = '';
-  
   // condicional se o valor do input for vazio ou espaço em branco emite o texto
   if (input.value === ' ' || input.value === '') {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
-
     //caso contrário  percorre o array palavras criado com a função split
     //enquanto index for menor que o tamanho do array palavras à tag spag será atribuído
     //o valor palavras na posição index. Em seguida atribuir span como filhos de paragrafo
