@@ -52,7 +52,7 @@ botao.addEventListener('click', () => {
 botao.addEventListener('click', () => {
   const palavras = DivideTexto();
   if (palavras === '' || palavras === ' ') {
-    return contador.innerHTML = 0;
+    return (contador.innerHTML = 0);
   }
-  return contador.innerHTML = palavras.length;
+  return (contador.innerHTML = palavras.length);
 });
