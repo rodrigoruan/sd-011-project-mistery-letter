@@ -39,14 +39,11 @@ botao.addEventListener('click', () => {
   const span = document.getElementsByTagName('span');
   for (let index = 0; index < span.length; index += 1) {
     span[index].classList.add(
-      estilos.style[Math.floor(Math.random() * estilos.style.length)]
-    );
+      estilos.style[Math.floor(Math.random() * estilos.style.length)]);
     span[index].classList.add(
-      estilos.size[Math.floor(Math.random() * estilos.size.length)]
-    );
+      estilos.size[Math.floor(Math.random() * estilos.size.length)]);
     span[index].classList.add(
-      estilos.rotation[Math.floor(Math.random() * estilos.rotation.length)]
-    );
+      estilos.rotation[Math.floor(Math.random() * estilos.rotation.length)]);
     span[index].classList.add(
       estilos.slope[Math.floor(Math.random() * estilos.slope.length)]
     );
@@ -56,8 +53,7 @@ botao.addEventListener('click', () => {
 botao.addEventListener('click', () => {
   const palavras = DivideTexto();
   if (palavras === '' || palavras === ' ') {
-    return contador.innerHTML = `Contador de Palavras: ${0}`;
-  } else {
-    return (contador.innerHTML = `Contador de Palavras: ${palavras.length}`);
+    return contador.innerHTML = 0;
   }
+  return (contador.innerHTML = palavras.length);
 });
