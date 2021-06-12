@@ -16,9 +16,9 @@ botao.addEventListener('click', () => {
   // condicional se o valor do input for vazio ou espaço em branco emite o texto
   if (input.value === ' ' || input.value === '') {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
-    //caso contrário  percorre o array palavras criado com a função split
-    //enquanto index for menor que o tamanho do array palavras à tag spag será atribuído
-    //o valor palavras na posição index. Em seguida atribuir span como filhos de paragrafo
+    /*caso contrário  percorre o array palavras criado com a função split
+    enquanto index for menor que o tamanho do array palavras à tag spag será atribuído
+    o valor palavras na posição index. Em seguida atribuir span como filhos de paragrafo*/
   } else {
     for (let index = 0; index < palavras.length; index += 1) {
       const span = document.createElement('span');
@@ -42,7 +42,8 @@ botao.addEventListener('click', () => {
   for (let index = 0; index < span.length; index += 1) {
     span[index].classList.add(estilos.style[Math.floor(Math.random() * estilos.style.length)]);
     span[index].classList.add(estilos.size[Math.floor(Math.random() * estilos.size.length)]);
-    span[index].classList.add(estilos.rotation[Math.floor(Math.random() * estilos.rotation.length)]);
+    span[index].classList
+      .add(estilos.rotation[Math.floor(Math.random() * estilos.rotation.length)]);
     span[index].classList.add(estilos.slope[Math.floor(Math.random() * estilos.slope.length)]);
   }
 });
