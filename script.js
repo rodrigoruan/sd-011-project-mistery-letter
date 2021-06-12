@@ -1,5 +1,6 @@
 const botao = document.getElementById('criar-carta');
 const input = document.getElementById('carta-texto');
+const contador = document.getElementById('carta-contador');
 
 // Função para dividir as palavras da frase
 function DivideTexto() {
@@ -49,5 +50,14 @@ botao.addEventListener('click', () => {
     span[index].classList.add(
       estilos.slope[Math.floor(Math.random() * estilos.slope.length)]
     );
+  }
+});
+
+botao.addEventListener('click', () => {
+  const palavras = DivideTexto();
+  if (palavras === '' || palavras === ' ') {
+    return contador.innerHTML = `Contador de Palavras: ${0}`;
+  } else {
+    return (contador.innerHTML = `Contador de Palavras: ${palavras.length}`);
   }
 });
